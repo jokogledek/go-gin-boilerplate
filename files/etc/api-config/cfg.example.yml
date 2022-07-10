@@ -1,0 +1,52 @@
+server:
+  host: "0.0.0.0"
+  port: 9090
+  debug: true
+  upload_path: "./files/var/upload/"
+  upload_limit_mb: 80
+  cors_enable: true
+  allowed_origins:
+    - "*"
+  allowed_headers:
+    - "Origin"
+    - "Authorization"
+    - "Content-Type"
+    - "App-Name"
+  allowed_method:
+    - "GET"
+    - "POST"
+    - "HEAD"
+    - "PUT"
+    - "DELETE"
+  allow_credentials: true
+  max_age_hour: "12h"
+  swagger_endpoint: "/swagger"
+  static_file_endpoint: "/media"
+
+monitoring:
+  log_path: "./files/var/log/backend_app"
+  log_name: "backend_app.log"
+  tracing_url: "http://localhost:14268/api/traces"
+  tracing_app_name: "gin-gonic-boilerplate"
+
+database:
+  debug: true
+  max_pool_open: 250
+  max_pool_idle: 10
+  max_life_time_sec: "8s"
+  master_address: "0.0.0.0:5432"
+  master_db_name: "local_db"
+  master_db_uname: "-"
+  master_db_pass: "-"
+  slave_address: "0.0.0.0:5432"
+  slave_db_name: "local_db"
+  slave_db_uname: "-"
+  slave_db_pass: "-"
+
+redis:
+  host: "0.0.0.0:6379"
+  pass: ""
+  pool_size: 100
+  max_active: 200
+  max_idle: 10
+  timeout_sec: "5s"

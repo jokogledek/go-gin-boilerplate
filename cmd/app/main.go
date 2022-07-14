@@ -64,7 +64,7 @@ func main() {
 
 	// init delivery
 
-	// initiate setup graceful shutdown
+	// initiate graceful shutdown
 
 	// start http server
 }
